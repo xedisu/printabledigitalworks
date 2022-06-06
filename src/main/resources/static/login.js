@@ -3,7 +3,7 @@ $(document).ready(function() {
     panelTwo = $('.form-panel.two')[0].scrollHeight;
 
   $('.form-panel.two').not('.form-panel.two.active').on('click', function(e) {
-    e.preventDefault();
+//    e.preventDefault();
     console.log("sunt aici 1 !!!");
     $('.form-toggle').addClass('visible');
     $('.form-panel.one').addClass('hidden');
