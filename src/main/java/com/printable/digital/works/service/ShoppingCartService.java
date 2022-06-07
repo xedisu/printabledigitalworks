@@ -17,20 +17,18 @@ public class ShoppingCartService {
 
     public void addProduct(Product product) {
         user.getShoppingCart().getProducts().add(product);
-        updateTotalCost();
+        totalCost += product.getPrice();
     }
 
     public void deleteProduct(Product product) {
         user.getShoppingCart().getProducts().remove(product);
-        updateTotalCost();
+        totalCost -= product.getPrice();
     }
 
     public void moveToWishlist(Product product) {
-        boolean removed = user.getShoppingCart().getProducts().remove(product);
-        if (removed) {
-            user.getShoppingCartWishlist().getProducts().add(product);
-            updateTotalCost();
-        }
+        user.getShoppingCart().getProducts().remove(product);
+        user.getShoppingCartWishlist().getProducts().add(product);
+        totalCost -= product.getPrice();
     }
 
     public void moveAllToWishlist() {
@@ -40,17 +38,11 @@ public class ShoppingCartService {
 
     public void clearShoppingCart() {
         user.getShoppingCart().getProducts().clear();
-        updateTotalCost();
-    }
-
-    public void updateTotalCost() {
         totalCost = (float) 0;
-        for (Product product : user.getShoppingCart().getProducts()) {
-            totalCost += product.getPrice();
-        }
     }
 
-    public float applyDiscount(Product product, float discount) {
-        return product.getPrice() * (1 - discount);
+
+    public void applyDiscount(float discount) {
+        totalCost *= 1 - discount;
     }
 }
