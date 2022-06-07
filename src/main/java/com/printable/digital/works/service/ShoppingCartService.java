@@ -10,9 +10,9 @@ public class ShoppingCartService {
     @Autowired
     User user;
 
-    Float totalCost;
+    float totalCost;
 
-    public Float getTotalCost() {
+    public float getTotalCost() {
         return totalCost;
     }
 
@@ -41,7 +41,6 @@ public class ShoppingCartService {
         user.getShoppingCart().getProducts().clear();
         totalCost = (float) 0;
     }
-
 
     public void applyDiscount(float discount) {
         totalCost *= 1 - discount;
