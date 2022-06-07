@@ -1,4 +1,4 @@
-package com.printable.digital.works.model;
+package com.printable.digital.works.model.enums;
 
 public enum Rating {
     ONE_STAR(1),
@@ -7,13 +7,11 @@ public enum Rating {
     FOUR_STAR(4),
     FIVE_STAR(5);
 
-
     private final int nrStars;
 
     Rating(int i) {
         this.nrStars = i;
     }
-
 
     public int getNrStars() {
         return this.nrStars;

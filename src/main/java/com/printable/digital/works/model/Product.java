@@ -1,14 +1,12 @@
 package com.printable.digital.works.model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import com.printable.digital.works.model.enums.Rating;
+import com.printable.digital.works.model.enums.Themes;
+import lombok.Data;
 import org.springframework.stereotype.Component;
 
-@Getter
-@Setter
+@Data
 @Component
-@Builder
 public class Product {
     String name;
     Float price;

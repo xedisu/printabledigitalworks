@@ -4,8 +4,8 @@ import lombok.Data;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 
-@Component
 @Data
+@Component
 public class ShoppingCart {
     ArrayList<Product>products;
 

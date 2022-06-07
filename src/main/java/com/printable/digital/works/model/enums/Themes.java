@@ -1,4 +1,4 @@
-package com.printable.digital.works.model;
+package com.printable.digital.works.model.enums;
 
 public enum Themes {
     FOOD,

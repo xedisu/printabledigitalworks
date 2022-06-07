@@ -7,11 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class PrintableDigitalWorks {
-
     public static void main(String[] args) {
         SpringApplication.run(PrintableDigitalWorks.class, args);
     }
-
-
 
 }
