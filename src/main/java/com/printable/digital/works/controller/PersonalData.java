@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class PersonalData {
 
     @GetMapping("/personal-data")
-    public String personalData(Model model) {
+    public String personalData() {
 
         return "personal-data";
     }
