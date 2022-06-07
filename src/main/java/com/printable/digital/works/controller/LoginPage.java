@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class Login {
+public class LoginPage {
     @Autowired
     LoginService loginService;
 
@@ -21,7 +21,7 @@ public class Login {
         model.addAttribute("userCredentials", new UserCredentials());
         model.addAttribute("registrationDTO", new RegistrationDTO());
 
-        return "login";
+        return "login-page";
     }
 
     @PostMapping("/submit-login")
@@ -31,7 +31,7 @@ public class Login {
             return "main-landing-page";
         }
 
-        return "login";
+        return "login-page";
     }
 
 }

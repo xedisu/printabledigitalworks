@@ -1,15 +1,13 @@
 package com.printable.digital.works.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class PersonalData {
-
+public class PersonalDataPage {
     @GetMapping("/personal-data")
-    public String personalData() {
-
-        return "personal-data";
+    public String personalDataPage() {
+        return "personal-data-page";
     }
+
 }

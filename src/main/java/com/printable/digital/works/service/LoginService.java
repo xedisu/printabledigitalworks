@@ -5,9 +5,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class LoginService {
-
     public boolean credentialsCheck(UserCredentials userCredentials){
         return userCredentials.getUserName().equals("admin") && userCredentials.getPassword().equals("admin");
     }
-}
 
+}
