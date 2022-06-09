@@ -9,16 +9,9 @@ import org.springframework.stereotype.Service;
 public class WishlistService {
     @Autowired
     User user;
-    @Autowired
-    ShoppingCartService shoppingCartService;
 
     public void addWishlistProduct(Product product) {
         user.getShoppingCartWishlist().getProducts().add(product);
-    }
-
-    public void moveProductToShoppingCart(Product product) {
-        user.getShoppingCartWishlist().getProducts().remove(product);
-        shoppingCartService.addProduct(product);
     }
 
     public void deleteWishlistProduct(Product product) {
