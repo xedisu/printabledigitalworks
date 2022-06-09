@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 public class ShoppingCartService {
     @Autowired
     User user;
+    @Autowired
+    WishlistService wishlistService;
 
     float totalCost;
 
@@ -28,12 +30,15 @@ public class ShoppingCartService {
 
     public void moveToWishlist(Product product) {
         user.getShoppingCart().getProducts().remove(product);
-        user.getShoppingCartWishlist().getProducts().add(product);
+        wishlistService.addWishlistProduct(product);
         totalCost -= product.getPrice();
     }
 
     public void moveAllToWishlist() {
-        user.getShoppingCartWishlist().getProducts().addAll(user.getShoppingCart().getProducts());
+        for (Product product : user.getShoppingCart().getProducts()) {
+            wishlistService.addWishlistProduct(product);
+        }
+
         clearShoppingCart();
     }
 
@@ -45,4 +50,5 @@ public class ShoppingCartService {
     public void applyDiscount(float discount) {
         totalCost *= 1 - discount;
     }
+
 }
