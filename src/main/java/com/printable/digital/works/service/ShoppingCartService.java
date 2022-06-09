@@ -26,17 +26,6 @@ public class ShoppingCartService {
         totalCost -= product.getPrice();
     }
 
-    public void moveToWishlist(Product product) {
-        user.getShoppingCart().getProducts().remove(product);
-        user.getShoppingCartWishlist().getProducts().add(product);
-        totalCost -= product.getPrice();
-    }
-
-    public void moveAllToWishlist() {
-        user.getShoppingCartWishlist().getProducts().addAll(user.getShoppingCart().getProducts());
-        clearShoppingCart();
-    }
-
     public void clearShoppingCart() {
         user.getShoppingCart().getProducts().clear();
         totalCost = (float) 0;
@@ -45,4 +34,5 @@ public class ShoppingCartService {
     public void applyDiscount(float discount) {
         totalCost *= 1 - discount;
     }
+
 }
