@@ -6,7 +6,8 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 public class PersonalData {
-    String name;
+    String firstName;
+    String lastName;
     String email;
     String phoneNr;
     String address;

@@ -34,4 +34,9 @@ public class UserService {
         shoppingCartService.addProduct(product);
     }
 
+    public void updateUser(User user){
+        this.user.setUserName(user.getUserName());
+        this.user.setPersonalData(user.getPersonalData());
+    }
+
 }
