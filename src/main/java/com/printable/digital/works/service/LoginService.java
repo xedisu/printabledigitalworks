@@ -12,8 +12,20 @@ public class LoginService {
     private LoginRepository loginRepository;
 
     public boolean credentialsCheck(UserCredentials userCredentials){
-        loginRepository.findBy()
-        return userCredentials.getUserName().equals("admin") && userCredentials.getPassword().equals("admin");
+        UserCredentials responseUserCredentials;
+
+        try {
+            responseUserCredentials = loginRepository.findUserCredentialsByName(userCredentials.getUserName());
+        }
+        catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        if (responseUserCredentials == null){
+            return false;
+        }
+
+        return responseUserCredentials.getPassword().equals(userCredentials.getPassword());
     }
 
 }

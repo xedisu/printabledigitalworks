@@ -31,7 +31,7 @@ public class LoginPage {
             return "main-landing-page";
         }
 
-        return "login-page";
+        return "redirect:/login";
     }
 
 }
