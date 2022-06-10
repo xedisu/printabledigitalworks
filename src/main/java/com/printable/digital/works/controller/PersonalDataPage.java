@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class PersonalDataPage {
@@ -19,11 +20,13 @@ public class PersonalDataPage {
     @GetMapping("/personal-data")
     public String personalDataPage(Model model) {
         model.addAttribute("user", user);
+
         return "personal-data-page";
     }
 
     @PostMapping("/update-personal-data")
-    public String updatePersonalData(@ModelAttribute User inputedUserData) {
+    public String updatePersonalData(@ModelAttribute User inputedUserData, @RequestParam String banana) {
+        System.out.println(banana);
         userService.updateUser(inputedUserData);
         return "personal-data-page";
     }
