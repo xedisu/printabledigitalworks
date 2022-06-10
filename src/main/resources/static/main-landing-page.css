@@ -64,7 +64,6 @@ section{
 
 
 /* search bar */
-
 .search-container{
     background: #fff;
     height: 30px;
@@ -111,6 +110,7 @@ section{
 .search-container:hover{
   animation: hoverShake 0.15s linear 3;
 }
+
 /* end search bar*/
 
 
